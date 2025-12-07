@@ -123,6 +123,7 @@ body {
     border-radius: 6px;
     font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace;
     border: 1px solid rgb(181, 186, 255);
+    white-space: normal;
 }
 
 .container p,
@@ -167,12 +168,23 @@ body {
     }
 }
 
+#profile-block {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+    float: right;
+    margin-right: 1em;
+}
+
 #profile-pic {
     width: 10%;
     height: 10%;
     border: 2px solid white;
     box-shadow: 0 0 20px white;
-    object-fit: cover;
     animation: pulseGlow 8s ease-in-out infinite;
 }
 
@@ -186,14 +198,4 @@ body {
     100% {
         box-shadow: 0 0 10px white;
     }
-}
-
-.profile-block {
-    position: absolute;
-    top: 3rem;
-    right: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 150px;
 }
