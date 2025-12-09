@@ -56,7 +56,8 @@ body {
     line-height: 1.4;
 }
 
-.container ul {
+.container ul,
+.container ol {
     padding-left: 1.5em;
     margin: 1em 0;
     background-color: rgba(255, 255, 255, 0.04);
@@ -66,14 +67,14 @@ body {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
-.container ol {
-    padding-left: 3em;
+.container blockquote {
+    padding-left: 1.5em;
     margin: 1em 0;
     background-color: rgba(255, 255, 255, 0.04);
     border-radius: 0.2em;
     padding: 0.5em;
+    color: #e6e6fa;
 }
-
 .container li {
     color: #e6e6fa;
     margin: 0.4em 1em 0.4em 0;
@@ -185,7 +186,7 @@ body {
     height: 10%;
     border: 2px solid white;
     box-shadow: 0 0 20px white;
-    animation: pulseGlow 8s ease-in-out infinite;
+    animation: pulseGlow 10s ease-in-out infinite;
 }
 
 @keyframes pulseGlow {
