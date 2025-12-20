@@ -37,3 +37,30 @@ time_text.addEventListener('mouseenter', () => (time_hovered = true));
 time_text.addEventListener('mouseleave', () => (time_hovered = false));
 
 updateTime();
+
+const block = document.getElementById('private');
+const hidden = block.querySelector('.hidden');
+const revealed = block.querySelector('.revealed');
+
+let hoverTimer = null;
+let activated = false;
+
+block.addEventListener('mouseenter', () => {
+    hidden.textContent = '( - Keep hovering... - )';
+    hoverTimer = setTimeout(() => {
+        hidden.hidden = true;
+        revealed.hidden = false;
+        activated = true;
+    }, 2000);
+});
+
+block.addEventListener('mouseleave', () => {
+    clearTimeout(hoverTimer);
+    hoverTimer = null;
+
+    if (!activated) {
+        hidden.textContent = '( - Hover to reveal - )';
+        hidden.hidden = false;
+        revealed.hidden = true;
+    }
+});
