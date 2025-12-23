@@ -1,4 +1,4 @@
-function getUTC9Time(use_determiner = false) {
+function getUTC9Time() {
     const date = new Date();
     const utc9 = new Date(date.getTime() + 9 * 60 * 60 * 1000);
 
@@ -7,45 +7,32 @@ function getUTC9Time(use_determiner = false) {
     const second = String(utc9.getUTCSeconds()).padStart(2, '0');
     const millisecond = String(utc9.getUTCMilliseconds()).padEnd(3, '0');
 
-    if (use_determiner) {
-        const determiner = hour < 12 ? 'AM' : 'PM';
-        const displayHour = hour % 12 || 12;
-        return `${String(displayHour).padStart(2, '0')}:${minute}:${second}.${millisecond} ${determiner}`;
-    } else {
-        return `${String(hour).padStart(2, '0')}:${minute}:${second}.${millisecond}`;
-    }
+    const determiner = hour < 12 ? 'AM' : 'PM';
+    const displayHour = hour % 12 || 12;
+    return `${String(displayHour).padStart(2, '0')}:${minute}:${second}.${millisecond} ${determiner}`;
 }
 
-const time_text = document.getElementById('time_text');
-
-let time_hovered = false;
+const timeText = document.getElementById('time_text');
 
 function updateTime() {
-    const normal = getUTC9Time(false);
-    const withDeterminer = getUTC9Time(true);
-
-    if (time_hovered) {
-        time_text.textContent = withDeterminer;
-    } else {
-        time_text.textContent = normal;
-    }
+    timeText.textContent = getUTC9Time();
 
     requestAnimationFrame(updateTime);
 }
 
-time_text.addEventListener('mouseenter', () => (time_hovered = true));
-time_text.addEventListener('mouseleave', () => (time_hovered = false));
+timeText.addEventListener('mouseenter', () => (time_hovered = true));
+timeText.addEventListener('mouseleave', () => (time_hovered = false));
 
 updateTime();
 
-const block = document.getElementById('private');
-const hidden = block.querySelector('.hidden');
-const revealed = block.querySelector('.revealed');
+const privateBlock = document.getElementById('private');
+const hidden = privateBlock.querySelector('.hidden');
+const revealed = privateBlock.querySelector('.revealed');
 
 let hoverTimer = null;
 let activated = false;
 
-block.addEventListener('mouseenter', () => {
+privateBlock.addEventListener('mouseenter', () => {
     hidden.textContent = '( - Keep hovering... - )';
     hoverTimer = setTimeout(() => {
         hidden.hidden = true;
@@ -54,7 +41,7 @@ block.addEventListener('mouseenter', () => {
     }, 2000);
 });
 
-block.addEventListener('mouseleave', () => {
+privateBlock.addEventListener('mouseleave', () => {
     clearTimeout(hoverTimer);
     hoverTimer = null;
 
