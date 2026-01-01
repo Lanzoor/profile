@@ -13,7 +13,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #0f0f23 0%, #1a0d2e 50%, #2d1b69 100%);
+    background: linear-gradient(135deg, #120536 0%, #380d96 50%, #280794 100%);
     min-height: 100vh;
     padding: 2rem;
     display: flex;
@@ -22,9 +22,8 @@ body {
     line-height: 1.75;
     font-size: 22.5px;
     position: relative;
-    min-height: 100vh;
     color: #ffffff;
-    padding-bottom: 15vw;
+    padding-bottom: 10vw;
 }
 
 .container {
@@ -281,7 +280,7 @@ body {
 }
 
 #color {
-    background: linear-gradient(90deg, #5e4dff, #6f36ff, #8c3aff);
+    background: linear-gradient(90deg, #4b9cff, #4d56ff, #6f36ff, #8c3aff);
     text-shadow: 0 0 20px #6f43ff;
     -webkit-background-clip: text;
     background-clip: text;
@@ -289,7 +288,7 @@ body {
 }
 
 .dim {
-    opacity: 0.25;
+    opacity: 0.6;
 }
 
 @media (max-width: 768px) {
@@ -359,11 +358,12 @@ body {
     padding: 16px 20px;
     border-radius: 12px;
     white-space: nowrap;
-    transition: all 0.1s ease-in;
+    transition: all 0.5s ease-in;
     pointer-events: none;
 }
 
 .tooltip:hover .tooltip-text {
+    transition: all 0.1s ease-in;
     visibility: visible;
     opacity: 1;
     transform: translate(-50%, 0);
@@ -397,7 +397,7 @@ body {
     right: 5vw;
     margin: auto;
     padding: 1em;
-    border-radius: 50px;
+    border-radius: 25px;
     font-size: 40px;
     color: #ffffff;
     text-shadow: 0 0 10px #ffffff;
@@ -405,4 +405,19 @@ body {
     border: 5px solid #6464e5;
     background: linear-gradient(120deg, #18065f, #3e0edd);
     transition: all 0.2s ease;
+}
+
+#status-bar {
+    border: 2px solid #aaa;
+    padding: 1em 2em;
+    max-width: 75vw;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    box-shadow: 0 0 20px #aaa, inset 0 0 20px #aaa;
+    background: linear-gradient(120deg, #222, #555);
+    transition: all 0.2s ease;
+}
+
+#status-bar:hover {
+    box-shadow: 0 20px 20px #aaa, inset 0 0 30px #ffffff;
 }
