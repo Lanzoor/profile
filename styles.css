@@ -8,7 +8,6 @@
 @font-face {
     font-family: 'JetBrains Mono';
     src: url('./fonts/JetBrainsMono-Regular.woff2') format('woff2'), url('./fonts/JetBrainsMono-Bold.woff2') format('woff2'), url('./fonts/JetBrainsMono-BoldItalic.woff2') format('woff2'), url('./fonts/JetBrainsMono-Italic.woff2') format('woff2');
-    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
@@ -22,7 +21,10 @@ body {
     align-items: center;
     line-height: 1.75;
     font-size: 22.5px;
+    position: relative;
+    min-height: 100vh;
     color: #ffffff;
+    padding-bottom: 15vw;
 }
 
 .container {
@@ -65,8 +67,8 @@ body {
 }
 
 .container h3 {
-    color: #d8bfd8;
-    margin: 1.5rem 0 0.5rem 0;
+    color: #f5d0f5;
+    margin: 0.25rem 0 0.5rem 0;
     line-height: 1.4;
 }
 
@@ -121,7 +123,7 @@ body {
 }
 
 .container a {
-    color: #8356ff;
+    color: #6f3aff;
     text-decoration: none;
     transition: color 0.3s ease;
     text-shadow: 0 0 25px currentColor;
@@ -146,6 +148,13 @@ body {
 .container span,
 .container div {
     color: #ffffff;
+}
+
+.container hr {
+    border-radius: 5px;
+    height: 7.5px;
+    background: rgba(255, 255, 255, 0.25);
+    border: none;
 }
 
 #profile-block {
@@ -221,7 +230,7 @@ body {
 }
 
 #google {
-    background: linear-gradient(90deg, #ff0000, #ffe16a, #008a27, #1e00ff);
+    background: linear-gradient(90deg, #ff0000, #ffe16a, #008a27, #0080ff);
     text-shadow: 0 0 5px #ffffff;
     -webkit-background-clip: text;
     background-clip: text;
@@ -272,27 +281,11 @@ body {
 }
 
 #color {
-    background: linear-gradient(90deg, #4a36ff, #6f36ff, #8c3aff);
+    background: linear-gradient(90deg, #5e4dff, #6f36ff, #8c3aff);
     text-shadow: 0 0 20px #6f43ff;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-}
-
-#back-to-top {
-    margin: 10vh auto 0 auto;
-    display: block;
-
-    margin-top: 10vh;
-    padding: 1em;
-    border-radius: 50px;
-    font-size: 50px;
-    color: #ffffff;
-    text-shadow: 0 0 10px #ffffff;
-    box-shadow: inset 0 0 20px #3e0edd, 0 50px 50px #3e0edd;
-    border: 5px solid #6464e5;
-    background: linear-gradient(120deg, #18065f, #3e0edd);
-    transition: all 0.2s ease;
 }
 
 .dim {
@@ -346,16 +339,18 @@ body {
 }
 
 .tooltip-label i {
-    text-shadow: 0 0 20px rgb(40, 5, 111);
+    text-shadow: 0 0 20px rgb(115, 60, 226);
 }
+
 .tooltip-text {
+    user-select: none;
     display: inline-block;
     visibility: hidden;
     opacity: 0;
     position: absolute;
     bottom: 130%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -25px);
     background: rgba(50, 4, 111, 0.5);
     backdrop-filter: blur(4px);
     border: 2px solid rgb(168, 121, 255);
@@ -364,11 +359,50 @@ body {
     padding: 16px 20px;
     border-radius: 12px;
     white-space: nowrap;
-    transition: opacity 0.2s ease;
+    transition: all 0.1s ease-in;
     pointer-events: none;
 }
 
 .tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+#end {
+    background: #240a7c;
+    box-shadow: 0 0 25px #5309ff, inset 0 0 25px #9465ff;
+    width: 100vw;
+    height: 7.5vw;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#centered-end {
+    color: #ae75ff;
+    text-align: center;
+}
+
+#centered-end b {
+    color: #edc5ff;
+}
+
+#back-to-top {
+    position: absolute;
+    right: 5vw;
+    margin: auto;
+    padding: 1em;
+    border-radius: 50px;
+    font-size: 40px;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff;
+    box-shadow: inset 0 0 20px #3e0edd, 0 50px 50px #3e0edd;
+    border: 5px solid #6464e5;
+    background: linear-gradient(120deg, #18065f, #3e0edd);
+    transition: all 0.2s ease;
 }

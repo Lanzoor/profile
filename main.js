@@ -28,23 +28,28 @@ updateTime();
 const backToTop = document.getElementById('back-to-top');
 
 backToTop.addEventListener('mouseenter', () => {
-    backToTop.style.boxShadow = 'inset 0 0 40px #9777ff, 0 50px 50px #3e0edd;';
+    backToTop.style.boxShadow = 'inset 0 0 40px #6030ffff, 0 50px 50px #3e0edd';
+    backToTop.style.cursor = 'pointer';
 });
 
 backToTop.addEventListener('mouseleave', () => {
-    backToTop.style.boxShadow = 'inset 0 0 20px #3e0edd, 0 50px 50px #3e0edd;';
+    backToTop.style.boxShadow = 'inset 0 0 20px #3e0edd, 0 50px 50px #3e0edd';
+    backToTop.style.transform = 'translateY(0)';
+    backToTop.style.cursor = 'default';
 });
 
-backToTop.addEventListener('click', () => {
+backToTop.addEventListener('mousedown', () => {
     backToTop.style.transform = 'translateY(25px)';
     backToTop.style.boxShadow = 'inset 0 0 40px #3e0edd, 0 25px 50px #3e0edd';
+});
 
+backToTop.addEventListener('mouseup', () => {
+    backToTop.style.transform = 'translateY(0)';
+    backToTop.style.boxShadow = 'inset 0 0 20px #3e0edd, 0 50px 50px #3e0edd';
     setTimeout(() => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth',
         });
-        backToTop.style.transform = 'translateY(0)';
-        backToTop.style.boxShadow = 'inset 0 0 20px #3e0edd, 0 50px 50px #3e0edd;';
     }, 250);
 });
