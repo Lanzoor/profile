@@ -27,7 +27,6 @@ body {
     font-size: 22.5px;
     position: relative;
     color: #ffffff;
-    padding-bottom: 300px;
 }
 
 .container {
@@ -205,6 +204,7 @@ body {
     box-shadow: 0 0 25px #000000;
     transition: opacity 0.3s ease;
     cursor: pointer;
+    user-select: none;
 }
 
 #steam {
@@ -302,38 +302,6 @@ body {
     opacity: 0.6;
 }
 
-@media (max-width: 768px) {
-    body {
-        padding: 1rem;
-    }
-
-    .container p {
-        line-height: 1.4;
-        font-size: 1rem;
-        text-align: justify;
-    }
-
-    .container li {
-        line-height: 1.45;
-        margin-bottom: 0.5em;
-    }
-}
-
-@media (max-width: 480px) {
-    .container h1 {
-        margin: 1.5rem 0;
-    }
-
-    .container h2 {
-        margin: 1.5rem 0;
-    }
-
-    .container p {
-        line-height: 1.35;
-        padding: 0 0.5rem;
-    }
-}
-
 .tooltip {
     position: relative;
     cursor: pointer;
@@ -387,7 +355,6 @@ body {
     width: 100vw;
     height: 200px;
     position: absolute;
-    font-size: 15px;
     bottom: 0;
     left: 0;
 
