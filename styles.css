@@ -18,7 +18,9 @@
 
 body {
     background: linear-gradient(135deg, #120536 0%, #380d96 50%, #280794 100%);
-    min-height: 100vh;
+    min-height: 100svh;
+    margin: 0;
+    padding: 0;
     padding: 2rem;
     display: flex;
     justify-content: center;
