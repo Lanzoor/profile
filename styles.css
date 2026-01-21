@@ -19,8 +19,6 @@
 body {
     background: linear-gradient(135deg, #120536 0%, #380d96 50%, #280794 100%);
     min-height: 100svh;
-    margin: 0;
-    padding: 0;
     padding: 2rem;
     display: flex;
     justify-content: center;
@@ -47,6 +45,8 @@ body {
         0 25px 50px rgba(0, 0, 0, 0.5),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     color: #ffffff;
+
+    outline: 4px solid red !important;
 }
 
 @media (max-width: 768px) {
