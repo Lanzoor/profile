@@ -416,8 +416,6 @@ body {
         inset 0 0 30px #ffffff;
 }
 
-
-
 /* Responsive Zone */
 
 @media (max-width: 768px) {
@@ -427,41 +425,35 @@ body {
     }
 }
 
-
-
 /* Responsive for Laptop Screen */
-@media (min-width:1024px) and (max-width: 1536px) {
-
+@media (min-width: 1024px) and (max-width: 1536px) {
     /* Profile Zone Responsive */
     .profile-wrapper {
         display: flex;
         flex-direction: row-reverse;
-        gap: 2rem; 
+        gap: 2rem;
         align-items: center;
         #profile-block {
             overflow: hidden;
-            position:unset;
+            position: unset;
             max-width: unset;
             width: 35%;
         }
 
         blockquote {
             width: 65%;
-            height: max-content ;
+            height: max-content;
         }
     }
 
     /* Tooltips Responsive */
     .container {
         /* I added this because the tooltips were oversized and created a scrollbar for smaller screen*/
-        overflow: hidden; 
+        overflow: hidden;
     }
 
     .tooltip-text {
-        white-space: unset ;
-        width: 250px;   
+        white-space: unset;
+        width: 250px;
     }
-
-
-
 }
