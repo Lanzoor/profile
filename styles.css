@@ -86,13 +86,22 @@ body {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
-.container blockquote {
+blockquote {
     padding-left: 1.5em;
     margin: 1em 0;
     background-color: rgba(255, 255, 255, 0.04);
-    border-radius: 0.2em;
-    padding: 0.5em;
+    border-radius: 10px;
+    padding: 0.75em;
     color: #e6e6fa;
+    transition:
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+blockquote:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 5px solid #aaaaaa75;
+    box-shadow: 0 10px 25px #aaaaaa75;
 }
 
 .container li {
@@ -126,21 +135,23 @@ body {
     font-style: italic;
 }
 
-.container a {
-    background: linear-gradient(120deg, #6f3aff, #385de2);
-    text-shadow: 0 0 25px #7142ff;
+a {
     text-decoration: none;
-    transition: color 0.3s ease;
+    display: inline-block;
+    background: linear-gradient(120deg, #6f3aff, #385de2);
+    text-shadow: 0 10px 25px #7142ff;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    transition: transform 0.1s ease-out;
 }
 
-.container a:hover {
+a:hover {
     background: linear-gradient(120deg, #8f66ff, #6284ff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    transform: translateY(-2.5px);
 }
 
 .container code {
@@ -184,6 +195,12 @@ body {
     border: 2px solid white;
     box-shadow: 0 0 20px white;
     animation: pulseGlow 10s ease-in-out infinite;
+    transition: box-shadow 0.2s ease;
+}
+
+#profile-pic:hover {
+    animation: none;
+    box-shadow: 0 10px 50px white;
 }
 
 @keyframes pulseGlow {
