@@ -422,14 +422,39 @@ hr {
         inset 0 0 30px #ffffff;
 }
 
-/* Thank you tactical02_ for the code block below! */
+/* The Responsive Zone */
 
 @media (max-width: 768px) {
-    .container,
-    #end {
-        width: 100%;
+    .container {
+        width: calc(768px - 4rem);
+    }
+
+    #section-bottom {
+        width: 768px;
     }
 }
+
+@media (max-width: 1024px) {
+    .container {
+        width: calc(1024px - 4rem);
+    }
+
+    #section-bottom {
+        width: 1024px;
+    }
+}
+
+@media (max-width: 1536px) {
+    .container {
+        width: calc(1536px - 4rem);
+    }
+
+    #section-bottom {
+        width: 1536px;
+    }
+}
+
+/* Thank you tactical02_ for the code block below! */
 
 @media (min-width: 1024px) and (max-width: 1536px) {
     .profile-wrapper {
