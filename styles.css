@@ -41,7 +41,7 @@ body {
     place-items: center;
 
     /* background: linear-gradient(135deg, #120536 0%, #380d96 100%); */
-    background: url('/profile/assets/background.png') no-repeat center center fixed;
+    background: url('/profile/assets/iris.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #ffffff;
 }
@@ -109,6 +109,13 @@ ol {
     color: #e6e6fa;
     border-radius: 0.2em;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+
+    transition: background-color 0.2s ease;
+}
+
+ul:hover,
+ol:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 blockquote {
@@ -134,7 +141,7 @@ blockquote:hover {
 }
 
 li {
-    color: #e6e6fa;
+    color: #eee;
     margin: 2em 1em;
     line-height: 1.5;
 }
@@ -149,8 +156,14 @@ ol ol {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 15px;
     border-radius: 10px;
-    color: #ffffff;
+    color: #eeeeee;
     margin-bottom: 1rem;
+
+    transition: background-color 0.2s ease;
+}
+
+.container p:hover {
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 b,
@@ -225,9 +238,11 @@ hr {
     display: flex;
     flex-direction: row-reverse;
     gap: 2rem;
-    align-items: center;
+    align-items: flex-start;
 
     blockquote {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
         width: 75vw;
         height: max-content;
     }
@@ -235,12 +250,10 @@ hr {
 
 #profile-block {
     display: flex;
-    position: unset;
 
     flex-direction: column;
     align-items: center;
 
-    top: 7rem;
     right: 7rem;
     max-width: unset;
     width: 20vw;
@@ -249,12 +262,13 @@ hr {
 }
 
 #profile-pic {
-    width: clamp(80px, 10vw, 250px);
+    width: clamp(80px, 10vw, 225px);
     height: auto;
     border-radius: 10%;
     border: 2px solid white;
     box-shadow: 0 0 20px white;
     transition: box-shadow 0.2s ease;
+    margin-top: 20px;
 }
 
 #profile-pic:hover {
@@ -392,6 +406,7 @@ hr {
 
     font-weight: bold;
 
+    color: #ffffff;
     text-shadow: 0 0 25px rgb(116, 51, 255) !important;
     vertical-align: 0em;
 }
@@ -434,7 +449,7 @@ hr {
 }
 
 #section-bottom {
-    background: #240a7c75;
+    background-color: #240a7caa;
 
     box-shadow:
         0 0 25px #5309ff,
