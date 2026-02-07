@@ -605,4 +605,35 @@ ol h3 {
         top: 0;
         bottom: 0;
     }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h1 b,
+    h1 strong {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 17.5px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+    #page-1,
+    #page-2,
+    #page-3 {
+        text-align: left;
+    }
+
+    #navigation {
+        font-size: 20px;
+    }
+
+    #navigation button {
+        font-size: 30px;
+    }
 }
