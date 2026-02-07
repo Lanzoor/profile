@@ -292,6 +292,7 @@ ol h3 {
 
     min-width: 40vw;
     max-width: 60vw;
+    min-height: 30vh;
 }
 
 #navigation {
