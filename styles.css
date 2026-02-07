@@ -494,12 +494,15 @@ ol h3 {
 }
 
 .picture-block p {
-    max-height: min(20vw, 100px);
+    max-height: 20vw;
 
     min-width: 10vw;
 
     text-align: center;
     margin-top: 20px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .picture {
@@ -591,5 +594,15 @@ ol h3 {
 @media (max-width: 768px) and (max-width: 1024px) {
     body {
         font-size: 10px;
+    }
+
+    #about-me-picture-block,
+    #page-2 ul {
+        position: relative;
+
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
     }
 }
