@@ -21,8 +21,8 @@
     font-weight: 400;
     font-display: swap;
     src:
-        url('/core/assets/fonts/woff2/JetBrainsMono-Regular.woff2') format('woff2'),
-        url('/core/assets/fonts/ttf/JetBrainsMono-Regular.ttf') format('truetype');
+        url('/assets/fonts/woff2/JetBrainsMono-Regular.woff2') format('woff2'),
+        url('/assets/fonts/ttf/JetBrainsMono-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -31,8 +31,8 @@
     font-weight: 700;
     font-display: swap;
     src:
-        url('/core/assets/fonts/woff2/JetBrainsMono-Bold.woff2') format('woff2'),
-        url('/core/assets/fonts/ttf/JetBrainsMono-Bold.ttf') format('truetype');
+        url('/assets/fonts/woff2/JetBrainsMono-Bold.woff2') format('woff2'),
+        url('/assets/fonts/ttf/JetBrainsMono-Bold.ttf') format('truetype');
 }
 
 @font-face {
@@ -41,8 +41,8 @@
     font-weight: 400;
     font-display: swap;
     src:
-        url('/core/assets/fonts/woff2/JetBrainsMono-Italic.woff2') format('woff2'),
-        url('/core/assets/fonts/ttf/JetBrainsMono-Italic.ttf') format('truetype');
+        url('/assets/fonts/woff2/JetBrainsMono-Italic.woff2') format('woff2'),
+        url('/assets/fonts/ttf/JetBrainsMono-Italic.ttf') format('truetype');
 }
 
 @font-face {
@@ -51,8 +51,8 @@
     font-weight: 400;
     font-display: swap;
     src:
-        url('/core/assets/fonts/woff2/FiraCode-Regular.woff2') format('woff2'),
-        url('/core/assets/fonts/ttf/FiraCode-Regular.ttf') format('truetype');
+        url('/assets/fonts/woff2/FiraCode-Regular.woff2') format('woff2'),
+        url('/assets/fonts/ttf/FiraCode-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -62,8 +62,8 @@
 
     font-display: swap;
     src:
-        url('/core/assets/fonts/woff2/FiraCode-Bold.woff2') format('woff2'),
-        url('/core/assets/fonts/ttf/FiraCode-Bold.ttf') format('truetype');
+        url('/assets/fonts/woff2/FiraCode-Bold.woff2') format('woff2'),
+        url('/assets/fonts/ttf/FiraCode-Bold.ttf') format('truetype');
 }
 
 @font-face {
@@ -72,8 +72,8 @@
     font-weight: 400;
     font-display: swap;
     src:
-        url('/core/assets/fonts/woff2/BrassMonoCode-Regular.woff2') format('woff2'),
-        url('/core/assets/fonts/ttf/BrassMonoCode-Regular.ttf') format('truetype');
+        url('/assets/fonts/woff2/BrassMonoCode-Regular.woff2') format('woff2'),
+        url('/assets/fonts/ttf/BrassMonoCode-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -83,8 +83,8 @@
 
     font-display: swap;
     src:
-        url('/core/assets/fonts/woff2/BrassMonoCode-Bold.woff2') format('woff2'),
-        url('/core/assets/fonts/ttf/BrassMonoCode-Bold.ttf') format('truetype');
+        url('/assets/fonts/woff2/BrassMonoCode-Bold.woff2') format('woff2'),
+        url('/assets/fonts/ttf/BrassMonoCode-Bold.ttf') format('truetype');
 }
 
 @font-face {
@@ -94,8 +94,8 @@
 
     font-display: swap;
     src:
-        url('/core/assets/fonts/woff2/BrassMonoCode-Italic.woff2') format('woff2'),
-        url('/core/assets/fonts/ttf/BrassMonoCode-Italic.ttf') format('truetype');
+        url('/assets/fonts/woff2/BrassMonoCode-Italic.woff2') format('woff2'),
+        url('/assets/fonts/ttf/BrassMonoCode-Italic.ttf') format('truetype');
 }
 
 /* ==================== Container Definitions ==================== */
