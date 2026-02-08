@@ -635,7 +635,6 @@ ol h3 {
 #profile-picture p,
 #iris-picture p {
     width: 20vw;
-    max-height: 5vh;
     font-size: 20px;
 
     overflow-y: auto;
@@ -731,13 +730,17 @@ ol h3 {
 
 /* ==================== Phones / Mobile ==================== */
 
-@media (max-width: 480px) {
+@media (max-width: 480px) and (max-height: 500px) {
     body {
         font-size: 7.5px;
     }
 
-    .container {
+    .container,
+    #page-1 .container {
+        width: 90vw;
         height: 80vh;
+
+        margin-left: 5vw;
     }
 
     #about-me-content {
@@ -761,7 +764,6 @@ ol h3 {
     }
 
     #about-me-pictures p {
-        min-height: 20vw;
         min-width: 70vw;
         padding: var(--medium-space);
     }
@@ -773,32 +775,26 @@ ol h3 {
     h1 {
         font-size: 20px;
     }
-
     h1 b,
     h1 strong {
         font-size: 30px;
     }
-
     h2 {
         font-size: 17.5px;
     }
-
     h3 {
         font-size: 15px;
     }
-
     ul h3,
     ol h3 {
         font-size: 10px;
     }
-
-    blockquote,
-    p {
-        width: 75%;
-    }
-
     hr {
         height: 5px;
+    }
+    code {
+        border-radius: 2.5px;
+        border: 0.25px solid rgb(181, 186, 255);
     }
 
     #page-description {
@@ -817,14 +813,12 @@ ol h3 {
     .font-credits {
         flex-direction: column;
     }
-
     .font-display {
-        padding: 10px 20px;
+        padding: 10px 15px;
 
-        max-width: 80%;
+        min-width: 80%;
         max-height: 30vw;
     }
-
     .font-display a {
         font-size: 10px;
     }
