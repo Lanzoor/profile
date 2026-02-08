@@ -1,5 +1,7 @@
 let currentPage: number = 1;
 
+document.getElementById('javascript-indicator')!.classList.remove('active');
+
 class Page {
     pageNumber: number;
     pageName: string;

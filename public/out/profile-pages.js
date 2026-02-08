@@ -1,5 +1,6 @@
 "use strict";
 let currentPage = 1;
+document.getElementById('javascript-indicator').classList.remove('active');
 class Page {
     constructor(page, name, element) {
         this.pageNumber = page;

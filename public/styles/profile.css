@@ -721,9 +721,9 @@ ol h3 {
 /* * {
     border: 1px solid red !important;
     border-radius: 10px !important;
-}
+} */
 
-*:hover {
+/* *:hover {
     background: #aa000010;
 } */
 
@@ -737,13 +737,13 @@ ol h3 {
     }
 
     .container {
-        height: 70vh;
+        height: 80vh;
     }
 
     #about-me-content {
+        align-items: center;
         justify-content: center;
         flex-direction: column;
-        align-items: center;
     }
 
     #about-me-ul,
@@ -760,8 +760,14 @@ ol h3 {
         min-width: 75vw;
     }
 
+    #about-me-pictures p {
+        min-height: 20vw;
+        min-width: 70vw;
+        padding: var(--medium-space);
+    }
+
     #iris-picture {
-        width: clamp(80px, 12.5vw, 30vw);
+        width: clamp(80px, 15vw, 30vw);
     }
 
     h1 {
