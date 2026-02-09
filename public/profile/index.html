@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="/styles/fonts.css"/>
     <link rel="stylesheet" href="/styles/subdirectories.css"/>
     <link rel="stylesheet" href="/styles/profile.css"/>
+    <link rel="stylesheet" href="/styles/panels/top-panel.css"/>
 </head>
 <body>
+    <p id="profile-page-text">Page n/s - <b>Placeholder</b></p>
+
     <div id="profile-pages">
     <div class="profile-page active" id="javascript-indicator">
     <div class="profile-container">
@@ -198,20 +201,22 @@
     </div>
     </div>
 
-    <div id="navigation" class="aligned-center">
-        <p><span id="profile-page-text">Page n/s - <b>Placeholder</b></span></p>
-        <button id="left-button">&lt;-</button>
-        <button id="right-button">-&gt;</button>
-    </div>
+    <div id="navigation">
+        <div id="left-navigation">
+            <button id="leftest-button">&lt;&lt;-</button>
+            <button id="left-button">&lt;-</button>
+        </div>
 
-    <div id="absolute-navigation">
-        <button id="leftest-button">&lt;&lt;-</button>
-        <button id="rightest-button">-&gt;&gt;</button>
+        <div id="right-navigation">
+            <button id="rightest-button">-&gt;&gt;</button>
+            <button id="right-button">-&gt;</button>
+        </div>
     </div>
 
     <div id="ripple-container"></div>
 
     <script type="module" src="/out/profile.js"></script>
     <script type="module" src="/out/profile-pages.js"></script>
+    <script type="module" src="/out/top-panel.js"></script>
 </body>
 </html>

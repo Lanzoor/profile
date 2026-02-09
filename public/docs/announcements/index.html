@@ -1,29 +1,31 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Lanzoor's Announcements</title>
+<head>
+    <title>Lanzoor's Announcements</title>
 
-        <link rel="stylesheet" href="/styles/fonts.css"/>
-        <link rel="stylesheet" href="/styles/documents.css">
-        <link rel="stylesheet" href="/styles/announcements.css">
-    </head>
-    <body>
-        <a href="../index.html" id="portal">../ Go back to my documents page</a>
+    <link rel="stylesheet" href="/styles/fonts.css"/>
+    <link rel="stylesheet" href="/styles/documents.css">
+    <link rel="stylesheet" href="/styles/announcements.css">
+    <link rel="stylesheet" href="/styles/panels/top-panel.css"/>
+</head>
+<body>
+    <a href="../index.html" id="portal">../ Go back to my documents page</a>
 
-        <h1>Announcement Portal</h1>
+    <h1>Announcement Portal</h1>
 
-        <p>
-            Hello there! This is a page where you can find all of my announcements.<br/>
-            <i>Click one of the links below to warp into that page.</i><br><br>
+    <p>
+        Hello there! This is a page where you can find all of my announcements.<br/>
+        <i>Click one of the links below to warp into that page.</i><br><br>
 
-            <b>- Searching Tools -</b><br><br>
-            <button id="sort-button">Sort: Descending</button> <input type="text" id="announcements-search" placeholder="Search by title..." />
-        </p>
+        <b>- Searching Tools -</b><br><br>
+        <button id="sort-button">Sort: Descending</button> <input type="text" id="announcements-search" placeholder="Search by title..." />
+    </p>
 
-        <table id="announcements-table">
-            <td>Fetching announcements... (if this persists, please enable JavaScript code or try again later.)</td>
-        </table>
+    <table id="announcements-table">
+        <td>Fetching announcements... (if this persists, visit the <a href="/troubleshooting/javascript-error.html">troubleshooting page</a>.)</td>
+    </table>
 
-        <script type="module" src="/out/announcements.js"></script>
-    </body>
+    <script type="module" src="/out/top-panel.js"></script>
+    <script type="module" src="/out/announcements.js"></script>
+</body>
 </html>
