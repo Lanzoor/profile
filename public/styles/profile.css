@@ -8,7 +8,9 @@
 /* ==================== Container Definitions ==================== */
 
 body {
+    font-size: 20px;
     background: linear-gradient(120deg, black, #38076f);
+    overflow-y: hidden;
 }
 
 /* ==================== Containers ==================== */
@@ -22,11 +24,11 @@ body {
     isolation: isolate;
     overflow: hidden;
 
-    width: 90vw;
+    width: 85vw;
     height: 80vh;
 
-    margin-left: 5vw;
-    margin-top: 5vh;
+    margin-left: 7.5vw;
+    margin-top: 15vh;
 
     padding: 2vw;
 
@@ -108,17 +110,7 @@ body {
     transition: none !important;
 }
 
-#navigation {
-    position: fixed;
-    bottom: var(--small-space);
-
-    left: 50%;
-    transform: translateX(-50%);
-
-    user-select: none;
-}
-
-#navigation p {
+#profile-page-text {
     font-family: 'Fira Code' !important;
     font-size: min(1vw, 20px);
 
@@ -127,58 +119,92 @@ body {
 
     background: none;
     width: 100%;
+    position: fixed;
+
+    top: 11.25vh;
+    text-align: center;
 }
 
-#navigation button,
-#absolute-navigation button {
-    font-family: 'Fira Code';
+@keyframes smoothFadeIn {
+    from {
+        opacity: 0;
+    }
 
+    to {
+        opacity: 1;
+    }
+}
+
+#navigation {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+}
+
+#navigation button {
+    font-family: 'Fira Code';
     color: #777;
     background: none;
     border: none;
     margin: 0;
-
     transition:
         text-shadow 0.2s ease,
         color 0.2s ease;
 }
 
-#navigation button {
+#left-navigation,
+#right-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#left-navigation {
+    margin-left: var(--small-space);
+}
+
+#right-navigation {
+    margin-right: var(--small-space);
+}
+
+#leftest-button,
+#rightest-button {
+    font-size: min(2vw, 40px);
+}
+
+#left-button,
+#right-button {
     font-size: min(4vw, 80px);
 }
 
-#navigation button:hover,
-#absolute-navigation button:hover {
+#navigation button:hover {
     text-shadow: 0 0 25px #777;
     cursor: default;
 }
 
-#navigation button.active,
-#absolute-navigation button.active {
+#navigation button.active {
     color: #ddd;
     background: none;
     border: none;
 }
 
-#navigation button.active:hover,
-#absolute-navigation button.active:hover {
+#navigation button.active:hover {
     color: white;
     text-shadow: 0 0 50px white;
     cursor: pointer;
 }
 
-#absolute-navigation button {
-    font-size: min(2vw, 40px);
-
-    position: fixed;
-    bottom: var(--small-space);
-}
-
-#leftest-button {
+#left-navigation {
     left: var(--small-space);
 }
 
-#rightest-button {
+#right-navigation {
     right: var(--small-space);
 }
 
@@ -253,7 +279,6 @@ body {
     height: 80vh;
 
     margin-left: 12.5vw;
-    margin-top: 5vh;
 }
 
 /* ==================== Page 2 ==================== */
@@ -286,14 +311,15 @@ body {
     left: var(--medium-space);
 
     min-width: 15vw;
+    max-width: 25vw;
 }
 
 #about-me-ul {
     right: var(--medium-space);
 
     min-width: 50vw;
-    max-width: 60vw;
-    max-height: 80vh;
+    width: 50vw;
+    min-height: 40vh;
 }
 
 #profile-picture {
@@ -356,7 +382,7 @@ body {
         font-size: 7.5px;
     }
 
-    #navigation button {
+    #left-navigation button {
         font-size: 40px;
     }
 
@@ -417,12 +443,12 @@ body {
         padding: var(--medium-space);
     }
 
-    #navigation button {
+    #left-navigation button {
         font-size: 40px;
         height: 40px;
     }
 
-    #absolute-navigation button {
+    #right-navigation button {
         font-size: 20px;
         height: 20px;
     }

@@ -20,3 +20,33 @@
 
     z-index: 2147483646;
 }
+
+#top-panel a {
+    font-family: 'Fira Code';
+
+    background: none;
+    border: 0.1vw solid #000;
+    border-radius: 0.5vw;
+
+    color: #000;
+    text-shadow: 0 0 0.5vw #000;
+
+    font-size: 1vw;
+    padding: 0.5vw;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease,
+        text-shadow 0.2s ease;
+}
+
+#top-panel a:hover {
+    color: #333;
+    text-shadow: 0 0 0.5vw #333;
+
+    transform: translateY(-0.25vw);
+}
+
+body {
+    padding-top: 10vh;
+}
