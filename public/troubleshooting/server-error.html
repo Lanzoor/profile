@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Special Thanks | lanzoor.dev</title>
+
+    <link rel="stylesheet" href="/styles/fonts.css"/>
+    <link rel="stylesheet" href="/styles/subdirectories.css"/>
+    <link rel="stylesheet" href="/styles/error-page.css"/>
+    <link rel="stylesheet" href="/styles/panels/top-panel.css"/>
+</head>
+<body>
+    <div id="top-panel"></div>
+
+    <div class="error-container">
+        <h1>- Server Status -</h1>
+
+        <blockquote>
+            Current server status (<code>/api/ping</code>): <b id="server-status"></b><br>
+            The server is pinged every 30 seconds to prevent spamming.
+            Last pinged: <code><span id="last-pinged">none yet</span></code>.<br>
+
+            <b>If the text says <code>none yet</code> even after waiting a while, it is a JavaScript link error.</b>
+            Please check our <a href="/troubleshooting/javascript-error.html">JavaScript troubleshooting page.</a>
+        </blockquote>
+
+        <h1>- Server Error -</h1>
+        <h3>We apologize for the inconvenience.</h3>
+    </div>
+
+    <script type="module" src="/out/troubleshooting.js"></script>
+    <script type="module" src="/out/top-panel.js"></script>
+</body>
+</html>
