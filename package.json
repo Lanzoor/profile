@@ -1,7 +1,7 @@
 {
     "name": "core",
     "private": true,
-    "version": "26.5.1",
+    "version": "26.6.1",
     "description": "The ultimate repository for all of Lanzoor's webpages, documents, and profiles.",
     "license": "ISC",
     "author": "Lanzoor",
@@ -9,7 +9,6 @@
     "scripts": {
         "test": "echo \"info: ready to run!\"",
         "dev": "npx tsc && echo \"info: compiled typescript files\"",
-        "deploy": "npm install && git add . && git commit -m \"Update version tag\" && git push",
         "build": "tsc"
     },
     "dependencies": {
