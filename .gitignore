@@ -2,3 +2,5 @@
 **/.prettierignore
 **/public/out
 **/public/out/*.js
+.vercel
+.env*.local
