@@ -296,7 +296,9 @@ th:hover {
     position: relative;
 
     min-width: 100vw;
-    height: 100vh;
+
+    min-height: 100vh;
+    max-height: none;
 
     text-align: center;
     flex: none;
@@ -306,9 +308,10 @@ th:hover {
 }
 
 #section-hr {
-    position: static;
+    position: absolute;
     bottom: 0;
     left: 0;
+    margin: 0;
     width: 100%;
 }
 
