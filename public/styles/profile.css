@@ -6,7 +6,7 @@
 }
 
 body {
-    font-size: 20px;
+    font-size: 22.5px;
     background: linear-gradient(120deg, black, #38076f);
     overflow-y: hidden;
 }
@@ -397,14 +397,21 @@ hr {
 }
 
 #languages-table tbody th:nth-child(1) {
+    font-weight: normal;
+    font-family: 'Fira Code';
     width: min(300px, 15vw);
-    color: rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.75);
     font-size: min(2rem, 2vw);
 }
 
 #languages-table td:nth-child(2) {
+    font-family: 'Fira Code';
     width: min(300px, 15vw);
     font-size: 40px;
+}
+
+#languages-table td:nth-child(2) i {
+    font-size: 30px;
 }
 
 #languages-table tbody td:nth-child(3),
@@ -412,6 +419,11 @@ hr {
     width: auto;
     text-align: left;
     font-size: 20px;
+}
+
+#languages-table tbody i {
+    color: #7d5aff;
+    text-shadow: 0 0 20px #8a4ffe;
 }
 
 #fluency-native {
@@ -437,11 +449,6 @@ hr {
 #fluency-red {
     color: #ff2121;
     text-shadow: 0 0 10px #840e0e;
-}
-
-#languages-table tbody i {
-    color: #7d5aff;
-    text-shadow: 0 0 20px #8a4ffe;
 }
 
 /* ==================== The Responsive Zone ==================== */
@@ -531,7 +538,22 @@ hr {
     }
 
     #interests-main,
-    #interests-main table {
+    #languages-table {
         width: 75%;
+    }
+
+    #languages-table {
+        height: 75vh !important;
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+
+    #languages-table thead th {
+        font-size: 10px;
+    }
+
+    #languages-table tbody td,
+    #languages-table tbody th {
+        height: 200px;
     }
 }

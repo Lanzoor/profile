@@ -1,14 +1,5 @@
-.section {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    min-height: 85vh;
-}
-
 body {
-    background: radial-gradient(circle at center, #153664 0%, transparent 55%), linear-gradient(140deg, #0a561e, #10051e 45%, #2b0a63);
+    background: radial-gradient(circle at center, #153664 0%, transparent 55%), linear-gradient(140deg, #042f47, #10051e 45%, #2b0a63);
 }
 
 .font-credits {
@@ -57,7 +48,7 @@ body {
 }
 
 h1 {
-    background: linear-gradient(100deg, #5cff82, #179a52);
+    background: linear-gradient(100deg, #2ff8ff, #158cd7);
     color: transparent;
     text-shadow: none;
 
@@ -68,10 +59,14 @@ h1 {
 h2 {
     background: linear-gradient(100deg, #5ebfff, #6929ff);
     color: transparent;
-    text-shadow: 0 0 10px #5117ff;
+    text-shadow: none;
 
     background-clip: text;
     -webkit-background-clip: text;
+}
+
+h3 {
+    margin: 0.5em;
 }
 
 @media (max-width: 480px) {
