@@ -31,6 +31,7 @@ const destinations: TopPanelDestination[] = [
     new TopPanelDestination('Credits', '/credits.html'),
     new TopPanelDestination('Documents', '/docs/index.html'),
     new TopPanelDestination('Announcements', '/docs/announcements/index.html'),
+    new TopPanelDestination('Troubleshooting', '/troubleshooting/index.html'),
 ];
 
 const tableHTML = `
