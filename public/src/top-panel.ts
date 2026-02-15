@@ -12,7 +12,7 @@ topPanel.innerHTML = `
     <p>Navigation</p>
 
     <button>
-        <img src="/assets/icons/hamburger.svg" alt="" id="hamburger-icon">
+        <img src="/assets/icons/hamburger.svg" alt="">
     </button>
 </div>
 `;

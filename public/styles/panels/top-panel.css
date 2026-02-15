@@ -68,6 +68,22 @@ body {
     text-shadow: 0 0 min(10px, 10vh) white;
 }
 
+#panel-navigation img,
+#panel-navigation p {
+    transition:
+        filter 0.2s ease,
+        transform 0.2s ease;
+}
+
+#panel-navigation:hover img {
+    filter: drop-shadow(0 0 2.5px white);
+}
+
+#panel-navigation:hover p,
+#panel-navigation:hover img {
+    transform: translateY(-2px);
+}
+
 #panel-navigation p {
     padding: 0;
     margin: 0;
@@ -75,12 +91,6 @@ body {
 
     font-size: min(30px, 3vh);
     font-family: 'Fira Code';
-}
-
-#panel-navigation:hover img {
-    transition: filter 0.5s ease;
-
-    filter: drop-shadow(0 0 2.5px white);
 }
 
 #panel-navigation button {
@@ -91,7 +101,7 @@ body {
     height: min(45px, 4.5vh);
 }
 
-#hamburger-icon {
+#panel-navigation img {
     width: 100%;
     height: 100%;
 }
