@@ -316,6 +316,11 @@ th:hover {
     text-align: center;
     flex: none;
 
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+
     overflow-y: auto;
     overflow-x: hidden;
 }

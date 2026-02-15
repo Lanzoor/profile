@@ -7,6 +7,10 @@ let navigationButton = document.getElementById('navigation-button')!;
 let welcomeDown = document.getElementById('welcome-down')!;
 let downArrow = document.getElementById('down-arrow')!;
 
+welcomeHeader.classList.add('inactive');
+welcomeButtons.classList.add('inactive');
+welcomeDown.classList.add('inactive');
+
 document.addEventListener('DOMContentLoaded', () => {
     welcomeHeader.classList.add('active');
     setTimeout(() => {

@@ -21,15 +21,11 @@ body {
     padding: 5vh 0 20vh;
 
     background-image: url('/assets/iris.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
 }
 
-#welcome-header,
-#welcome-buttons,
-#welcome-down {
+#welcome-header.inactive,
+#welcome-buttons.inactive,
+#welcome-down.inactive {
     opacity: 0;
     transform: translateY(40px);
 }
@@ -123,11 +119,11 @@ body {
 }
 
 #faq {
-    background: rgba(0, 0, 0);
+    background: radial-gradient(circle at center, #09344e 0%, transparent 55%), #1b0346;
 }
 
 #faq-table {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
 
     margin-top: 20px;
     padding: 30px;
@@ -136,7 +132,7 @@ body {
 }
 
 #connections {
-    background: #151515;
+    background: linear-gradient(140deg, #3a0387 0%, #1b0346 25%, #1b0346 75%, #230491);
 
     text-align: left;
     padding: 2.5%;

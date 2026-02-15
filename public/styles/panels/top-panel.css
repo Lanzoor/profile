@@ -53,11 +53,6 @@
     box-shadow: 0 0px min(1.5rem, 2vw) rgba(0, 0, 0, 0.18);
 }
 
-#top-panel td:has(#lanzoor-dev) {
-    width: 30vw;
-    min-width: 180px;
-}
-
 #top-panel td a {
     display: flex;
 
@@ -80,11 +75,16 @@
     transition: all 0.18s ease;
 }
 
-#lanzoor-dev {
+#large-text {
     font-family: 'JetBrains Mono', monospace !important;
     font-size: min(4rem, 3vw) !important;
     font-weight: 500;
     letter-spacing: -0.02em;
+}
+
+#top-panel td:has(#large-text) {
+    width: 30vw;
+    min-width: 180px;
 }
 
 #top-panel td:hover a {

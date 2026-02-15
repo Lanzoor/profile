@@ -1,7 +1,7 @@
 {
     "name": "core",
     "private": true,
-    "version": "26.6.8",
+    "version": "26.7.0",
     "description": "The ultimate repository for all of Lanzoor's webpages, documents, and profiles.",
     "license": "ISC",
     "author": "Lanzoor",

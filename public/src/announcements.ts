@@ -15,7 +15,7 @@ class Announcement {
         this.lastModified = lastModified;
 
         if (title == removedMessage) {
-            this.link = '/docs/announcements/removed.html';
+            this.link = '/docs/removed.html';
         }
     }
 
