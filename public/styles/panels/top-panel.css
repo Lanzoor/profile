@@ -15,8 +15,8 @@
 
     background: linear-gradient(120deg, #222, #444);
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
-    z-index: 2147483646;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+    z-index: 2147483648;
 
     overflow-x: hidden;
     overflow-y: hidden;
@@ -26,65 +26,60 @@ body {
     padding-top: min(100px, 10vh);
 }
 
+#panel-logo,
+#open-navigation,
+#close-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: min(10px, 1vh);
+
+    padding: min(20px, 2vh);
+
+    height: 100%;
+}
+
+#top-panel div,
+#top-panel div *,
+#close-navigation div,
+#close-navigation * {
+    transition:
+        text-shadow 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+#top-panel div:hover {
+    cursor: pointer;
+
+    background: #333;
+    box-shadow: 0 0 20px #333;
+}
+
 #panel-logo {
+    align-self: flex-start;
+}
+
+#panel-logo a {
     background: none;
 
     color: white;
     text-shadow: none;
     font-size: min(45px, 4.5vh);
-
-    margin-left: min(25px, 2.5vw);
 }
 
-#panel-logo:hover {
-    text-shadow: 0 0 min(10px, 2vw) white;
+#panel-logo a:hover {
+    transform: none;
 }
 
-#panel-navigation {
+#open-navigation {
     align-self: flex-end;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: min(10px, 10vh);
-
-    padding: 0 min(10px, 10vh);
-
-    height: 100%;
-
-    transition:
-        text-shadow 0.2s ease,
-        background 0.2s ease,
-        box-shadow 0.2s ease;
 }
 
-#panel-navigation:hover {
-    cursor: pointer;
-
-    background: #333;
-    box-shadow: -10px 0 10px #333;
-
-    text-shadow: 0 0 min(10px, 10vh) white;
-}
-
-#panel-navigation img,
-#panel-navigation p {
-    transition:
-        filter 0.2s ease,
-        transform 0.2s ease;
-}
-
-#panel-navigation:hover img {
-    filter: drop-shadow(0 0 2.5px white);
-}
-
-#panel-navigation:hover p,
-#panel-navigation:hover img {
-    transform: translateY(-2px);
-}
-
-#panel-navigation p {
+#open-navigation p,
+#close-navigation p {
     padding: 0;
     margin: 0;
     background: none;
@@ -93,7 +88,16 @@ body {
     font-family: 'Fira Code';
 }
 
-#panel-navigation button {
+#open-navigation p {
+    color: white;
+}
+
+#close-navigation p {
+    color: black;
+}
+
+#open-navigation button,
+#close-navigation button {
     background: none;
     border: none;
 
@@ -101,18 +105,66 @@ body {
     height: min(45px, 4.5vh);
 }
 
-#panel-navigation img {
+#open-navigation img,
+#close-navigation img {
     width: 100%;
     height: 100%;
 }
 
-@media (max-width: 768px) {
-    #top-panel {
-        height: 40px;
-        max-height: 10vh;
-    }
+#navigation-overlay,
+#navigation-overlay * {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
 
-    body {
-        padding-top: min(40px, 10vh);
-    }
+#navigation-overlay {
+    display: block;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(4px);
+    box-shadow: inset 0 0 5vw black;
+
+    z-index: 2147483647;
+
+    cursor: pointer;
+}
+
+#navigation-overlay.active,
+#navigation-overlay.active * {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#navigation-panel {
+    position: fixed;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    width: 40vw;
+    height: 100vh;
+
+    right: 0;
+}
+
+#close-navigation {
+    position: fixed;
+    top: 0;
+
+    background: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+
+    width: 100%;
+    height: 100px;
+    max-height: 10vh;
+}
+
+* {
+    border: 1px solid red !important;
 }
