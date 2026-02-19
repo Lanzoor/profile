@@ -30,7 +30,7 @@ let lastUpdated: number | undefined;
 async function updateServerStatus() {
     const fetchResult = await pingServer();
     if (fetchResult) {
-        uptimeDisplay.textContent = fetchResult.createdAt.toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        uptimeDisplay.textContent = new Date(fetchResult.createdAt).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
         serverStatus.textContent = '🟢 Online';
     } else {
         serverStatus.textContent = '🔴 Troublesome';
