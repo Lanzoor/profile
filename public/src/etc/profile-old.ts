@@ -1,30 +1,3 @@
-let rippleContainer = document.getElementById('ripple-container');
-
-document.addEventListener('mousedown', (e) => {
-    const ripple = document.createElement('div');
-    const size = 30;
-    Object.assign(ripple.style, {
-        position: 'absolute',
-        left: `${e.clientX - size / 2}px`,
-        top: `${e.clientY - size / 2}px`,
-        width: `${size}px`,
-        height: `${size}px`,
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
-        boxShadow: '0 0 7.5px rgba(255, 255, 255, 0.7), inset 0 0 5px rgba(255, 255, 255, 0.8)',
-        borderRadius: '50%',
-        transform: 'scale(0.5)',
-        opacity: '0.6',
-        transition: 'transform 0.75s ease-out, opacity 0.75s ease-out',
-    });
-    rippleContainer.appendChild(ripple);
-
-    requestAnimationFrame(() => {
-        ripple.style.transform = 'scale(5)';
-        ripple.style.opacity = '0';
-    });
-    setTimeout(() => ripple.remove(), 600);
-});
-
 function getUTC9Time() {
     const date = new Date();
     const utc9 = new Date(date.getTime() + 9 * 60 * 60 * 1000);
@@ -44,7 +17,7 @@ function getUTC9Time() {
     return `${year}-${month}-${day} ${String(displayHour).padStart(2, '0')}:${minute}:${second}.${millisecond} ${determiner}`;
 }
 
-const timeText = document.getElementById('time-text');
+const timeText = document.getElementById('time-text')!;
 
 function updateTime() {
     timeText.textContent = getUTC9Time();
@@ -54,7 +27,7 @@ function updateTime() {
 
 updateTime();
 
-const backToTop = document.getElementById('back-to-top');
+const backToTop = document.getElementById('back-to-top')!;
 
 backToTop.addEventListener('mouseenter', () => {
     backToTop.style.boxShadow = 'inset 0 0 40px #835dffff, 0 50px 50px #3e0edd';
@@ -84,7 +57,7 @@ backToTop.addEventListener('mouseup', () => {
 });
 
 function updateSecretDisplay() {
-    const secretLink = document.getElementById('secret-link');
+    const secretLink = document.getElementById('secret-link')!;
     if (localStorage.getItem('secret') === null) {
         localStorage.setItem('secret', 'false');
     }
@@ -98,17 +71,3 @@ function updateSecretDisplay() {
 }
 
 setInterval(updateSecretDisplay, 250);
-
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', function (event) {
-        event.preventDefault();
-
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-            });
-        }
-    });
-});

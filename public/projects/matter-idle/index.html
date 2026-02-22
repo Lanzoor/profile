@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matter Idle | lanzoor.dev</title>
+
+    <link rel="stylesheet" href="/styles/fonts.css"/>
+    <link rel="stylesheet" href="./styles/matter.css">
+    <link rel="stylesheet" href="./styles/left-panel.css">
+</head>
+<body>
+    <div class="matter-content">
+        <div id="matter-information">
+            <p>
+                You have <span id="matter-display" class="highlight matter-color">0.10</span> matter.<br>
+                Your reactors produce <span id="matter-per-second" class="highlight matter-color">0</span> matter per second.
+            </p>
+        </div>
+        <div id="matter-reactors">
+            <div class="matter-reactor">
+                <p>
+                    <b>1st Reactor</b> - Produces matter<br>
+
+                </p>
+
+                <button class="reactor-upgrade reactor-1 engine">
+                    <b>Build Engine</b><br>
+                    Increases base matter output - 0 matter<br>
+                    -> 0.01 matter Cost: 0.1 matter
+                </button>
+
+                <button class="reactor-upgrade reactor-1 gluon">
+                    <b>Power-up Gluons</b><br>
+                    Increases reactor power - 1&Aring;<br>
+                    -> 1.01&Aring; Cost: 5 matter
+                </button>
+
+                <button class="reactor-upgrade reactor-1 quark">
+                    <b>Power-up Quarks</b><br>
+                    Multiplies matter output - 1.0x<br>
+                    -> 1.1x Cost: 20 matter
+                </button>
+            </div>
+            <div class="matter-reactor" id="matter-reactor-2">
+                <p>
+                    <b>2nd Reactor</b> - Upgrades the 1st reactor
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./src/left-panel.js"></script>
+</body>
+</html>
+

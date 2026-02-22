@@ -1,0 +1,18 @@
+#left-panel {
+    position: fixed;
+
+    width: min(200px, 15vw);
+    height: 100vh;
+
+    left: 0;
+    top: 0;
+
+    padding: 0;
+    margin: 0;
+
+    background: black;
+}
+
+body {
+    padding-left: min(200px, 15vw);
+}

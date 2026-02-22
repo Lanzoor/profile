@@ -1,6 +1,10 @@
 **/node_modules
 **/.prettierignore
-**/public/out
-**/public/out/*.js
+
+*.js
+
 .vercel
 **/.env*.local
+
+*.md
+!README.md

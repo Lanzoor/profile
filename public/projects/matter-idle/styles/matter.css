@@ -1,0 +1,70 @@
+body {
+    font-family: 'JetBrains Mono';
+    background: linear-gradient(120deg, #190840, #0d0639);
+    color: #ffffff;
+    font-size: 20px;
+
+    padding: 0;
+    margin: 0;
+}
+
+.highlight {
+    font-size: 30px;
+}
+
+.matter-color {
+    color: #784fff;
+    text-shadow: 0 0 10px #3c00ff;
+}
+
+.antimatter-color {
+    color: #8827bf;
+    text-shadow: 0 0 10px #49053c;
+}
+
+.matter-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px #ffffff;
+    height: 100vh;
+}
+
+.matter-content div {
+    padding: 1em 2em;
+    margin: 1em;
+}
+
+.reactor-upgrade {
+    background: black;
+    color: white;
+    border: 1px solid #4816ff;
+    padding: 1em 2em;
+    margin: 0.5em;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.reactor-upgrade.available {
+    cursor: pointer;
+    background: rgb(29, 2, 73);
+    box-shadow: inset 0 0 10px #6b35ff;
+    color: #6b35ff;
+}
+
+.reactor-upgrade.available:hover {
+    box-shadow: inset 0 0 20px #6b35ff;
+}
+
+#matter-information {
+    text-align: center;
+    line-height: 1.5;
+}
+
+* {
+    outline: 1px solid red;
+}
