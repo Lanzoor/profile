@@ -58,6 +58,9 @@ class NavigationDestination {
 
         if (!this.childElements) {
             linkEl.href = this.link;
+            if (!this.link.startsWith('/')) {
+                linkEl.target = '_blank';
+            }
         } else {
             linkEl.classList.add('disabled');
         }
@@ -82,10 +85,23 @@ class NavigationDestination {
 
                 textEl.addEventListener('click', () => {
                     const expanded = arrowEl.getAttribute('aria-expanded') === 'true';
-                    arrowEl.setAttribute('aria-expanded', String(!expanded));
-                    const childList = parent.querySelector('ul.dropdown');
-                    childList?.classList.toggle('open');
-                    arrowEl.classList.toggle('open');
+
+                    const allDropdowns = parent.querySelectorAll('ul.dropdown');
+                    allDropdowns.forEach((dropdown) => dropdown.classList.remove('open'));
+
+                    const allArrows = parent.querySelectorAll('img.chevron');
+                    allArrows.forEach((arrow) => {
+                        arrow.setAttribute('aria-expanded', 'false');
+                        arrow.classList.remove('open');
+                    });
+
+                    const childList = listItemEl.nextElementSibling as HTMLUListElement | null;
+
+                    if (childList && childList.classList.contains('dropdown')) {
+                        arrowEl.setAttribute('aria-expanded', String(!expanded));
+                        childList.classList.toggle('open', !expanded);
+                        arrowEl.classList.toggle('open', !expanded);
+                    }
                 });
 
                 const childListEl = document.createElement('ul');
@@ -119,7 +135,12 @@ let destinations = [
     //
     new NavigationDestination('/', 'Welcome!'),
     new NavigationDestination('/profile', 'Profile'),
-    new NavigationDestination('/projects', 'Projects'),
+    new NavigationDestination('/projects', 'Projects', [
+        //
+        new NavigationDestination('/projects', 'Project Portal'),
+        new NavigationDestination('https://www.youtube.com/@lanzoorgaming', 'Videos'),
+        new NavigationDestination('/projects/conlangs', 'Conlangs'),
+    ]),
     new NavigationDestination('/docs', 'Documents', [
         //
         new NavigationDestination('/docs', 'Document Portal'),

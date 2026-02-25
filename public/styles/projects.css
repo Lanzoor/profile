@@ -2,21 +2,104 @@ body {
     background: radial-gradient(circle at center, #220974 0%, transparent 55%), linear-gradient(140deg, #041947, #10051e 45%, #2b0a63);
 }
 
-#projects--grid {
+.projects--grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1.5rem;
+    padding: 1rem;
 }
 
-#projects--grid div {
+.projects--grid div {
     border-radius: 10px;
-    outline: 1px solid red;
-
-    padding: 1em;
-    margin: 1em 0;
+    outline: 1px solid #ddd;
+    background: #222;
+    color: #fff;
+    padding: 2rem;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-#projects--grid h1 {
-    font-size: 30px;
+.projects--grid div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
-#projects--grid .program {
-    background: #007bff25;
+
+.projects--div {
+    display: none;
+}
+.projects--div.visible {
+    display: block;
+}
+
+.projects--grid h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+button.show-all {
+    background: linear-gradient(120deg, rgba(170, 0, 255, 0.25), rgba(255, 255, 255, 0.25), rgba(72, 0, 255, 0.25));
+}
+
+button.show-all.selected {
+    background: linear-gradient(120deg, rgba(170, 0, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(72, 0, 255, 0.75));
+}
+
+.programs .projects--grid div,
+button.programs {
+    background: #ff00bf25;
+}
+
+button.programs.selected {
+    background: #ff00bf75;
+}
+
+.videos .projects--grid div,
+button.videos {
+    background: #6f00ff25;
+}
+
+button.videos.selected {
+    background: #6f00ff75;
+}
+
+.conlangs .projects--grid div,
+button.conlangs {
+    background: #ffbb0025;
+}
+
+button.conlangs.selected {
+    background: #ffbb0075;
+}
+
+#projects--filter-buttons {
+    margin: 40px auto;
+    padding: 20px;
+    border: 2px solid white;
+    background: #22222275;
+    max-width: 80vw;
+}
+
+.projects--filter-button {
+    margin: 10px;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+
+    color: white;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.projects--filter-button.selected {
+    transform: scale(1.1);
+}
+
+.projects--filter-button:hover {
+    transform: scale(1.05);
 }

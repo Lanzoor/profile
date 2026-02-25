@@ -15,11 +15,39 @@
         <h1>My Projects</h1>
 
         <p>
-            Here is the ultimate showcase of all projects I have made along my journey!
+            Here is the ultimate showcase of all projects I have made along my journey!<br>
+            <b>Click the buttons below to filter by type!</b>
         </p>
 
-        <div id="projects--grid">
+        <div id="projects--filter-buttons">
+            <button class="projects--filter-button show-all selected">Show All</button>
+            <button class="projects--filter-button programs">Programs</button>
+            <button class="projects--filter-button videos">Videos</button>
+            <button class="projects--filter-button conlangs">Conlangs</button>
+        </div>
 
+        <div class="projects--div programs visible">
+            <h2>Programs</h2>
+
+            <div class="projects--grid">
+                <div><b>VSCode Tweaks</b><br>Custom Visual Studio Code tweaks and overlays</div>
+            </div>
+        </div>
+
+        <div class="projects--div videos visible">
+            <h2>Videos</h2>
+
+            <div class="projects--grid">
+                <div><b>Placeholder</b><br>Placeholder</div>
+            </div>
+        </div>
+
+        <div class="projects--div conlangs visible">
+            <h2>Conlangs</h2>
+
+            <div class="projects--grid" onclick="location.href='./conlangs/proto-lanzavel'">
+                <div><b>Proto-Lanzavel</b><br>A root language for the Lanzavel language family</div>
+            </div>
         </div>
     </div>
 
