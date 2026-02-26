@@ -499,10 +499,23 @@ hr {
     }
 
     #status-bar {
-        font-size: 7.5px;
+        font-size: 10px;
         max-height: 20vh;
 
         overflow-y: auto;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+    h1 b {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 20px;
     }
 
     #about-me-ul,
