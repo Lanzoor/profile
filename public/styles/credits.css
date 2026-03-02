@@ -3,12 +3,10 @@ body {
 }
 
 .font-credits {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-width: 1100px;
-    margin: 4rem auto;
-    gap: 3rem;
-    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 }
 
 .font-display {
@@ -19,7 +17,10 @@ body {
     font-size: 15px;
     height: 200px;
 
-    background: rgba(255, 255, 255);
+    margin: 2rem;
+    width: 50%;
+
+    background: rgb(0, 0, 0);
     border: 2px solid black;
     border-radius: 10px;
 
@@ -29,18 +30,22 @@ body {
 
     user-select: none;
 
-    transition: box-shadow 0.2s ease;
+    transition:
+        box-shadow 0.2s ease,
+        border 0.2s ease;
 }
 
 .font-display:hover {
+    border: 2px solid white;
+
     box-shadow:
-        0 10px 25px black,
-        inset 0 0 25px black;
+        0 10px 25px white,
+        inset 0 0 25px white;
 }
 
 .font-display a {
     font-size: 20px;
-    color: black;
+    color: white;
     text-shadow: none;
 }
 

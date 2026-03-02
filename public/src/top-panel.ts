@@ -41,12 +41,12 @@ navigationCloseIcon.alt = '☰';
 const navigationPanelNav = document.createElement('nav');
 const navigationPanelList = document.createElement('ul');
 
-class NavigationDestination {
+class Destination {
     private link: string;
     private name: string;
-    private childElements?: NavigationDestination[];
+    private childElements?: Destination[];
 
-    constructor(link: string, name: string, childElements?: NavigationDestination[]) {
+    constructor(link: string, name: string, childElements?: Destination[]) {
         this.link = link;
         this.name = name;
         this.childElements = childElements;
@@ -133,22 +133,26 @@ class NavigationDestination {
 
 let destinations = [
     //
-    new NavigationDestination('/', 'Welcome!'),
-    new NavigationDestination('/profile', 'Profile'),
-    new NavigationDestination('/projects', 'Projects', [
+    new Destination('/', 'Welcome!'),
+    new Destination('/profile', 'Profile'),
+    new Destination('/projects', 'Projects', [
         //
-        new NavigationDestination('/projects', 'Project Portal'),
-        new NavigationDestination('https://www.youtube.com/@lanzoorgaming', 'Videos'),
-        new NavigationDestination('/projects/conlangs', 'Conlangs'),
+        new Destination('/projects', 'Project Portal'),
+        new Destination('https://www.youtube.com/@lanzoorgaming', 'Videos'),
+        new Destination('/projects/conlangs', 'Conlangs'),
     ]),
-    new NavigationDestination('/docs', 'Documents', [
+    new Destination('/docs', 'Documents', [
         //
-        new NavigationDestination('/docs', 'Document Portal'),
-        new NavigationDestination('/docs/announcements', 'Announcements'),
-        new NavigationDestination('/api/docs', 'API Docs'),
+        new Destination('/docs', 'Document Portal'),
+        new Destination('/docs/announcements', 'Announcements'),
+        new Destination('/api/docs', 'API Docs'),
     ]),
-    new NavigationDestination('/credits', 'Credits'),
-    new NavigationDestination('/troubleshooting', 'Troubleshooting'),
+    new Destination('/credits', 'Credits', [
+        //
+        new Destination('/credits', 'Credits'),
+        new Destination('/credits/icons', 'Icon Credits'),
+    ]),
+    new Destination('/troubleshooting', 'Troubleshooting'),
 ];
 
 document.addEventListener('DOMContentLoaded', () => {

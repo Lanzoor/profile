@@ -1,5 +1,9 @@
 body {
-    background: black;
+    background-image: url('/assets/iris.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 @keyframes floatAnimation {
@@ -19,8 +23,6 @@ body {
 #welcome {
     min-height: 90vh;
     padding: 5vh 0 20vh;
-
-    background-image: url('/assets/iris.jpg');
 }
 
 #welcome--header.inactive,
@@ -152,11 +154,11 @@ body {
     cursor: pointer;
 }
 
-#faq {
+#welcome--faq {
     background: radial-gradient(circle at center, #09344e 0%, transparent 55%), #1b0346;
 }
 
-#faq-table {
+#welcome--faq-table {
     background: rgba(255, 255, 255, 0.05);
 
     margin-top: 20px;
@@ -179,6 +181,8 @@ body {
 }
 
 #connections--statistics {
+    font-family: 'Space Grotesk';
+
     width: 100%;
     text-align: center;
     background: none;

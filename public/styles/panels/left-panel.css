@@ -7,7 +7,7 @@
 
     padding: 100px 20px 0 20px;
 
-    background: linear-gradient(180deg, #03011e, #0b0838);
+    background: rgba(255, 255, 255, 0.1);
     color: #eee;
 
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4);
@@ -53,8 +53,11 @@ body {
 
 #left-panel li a {
     color: #cfcfcf;
-    min-width: 20px;
+
+    width: 100%;
+    height: 100%;
     text-decoration: none;
+    text-shadow: none;
 }
 
 #left-panel::-webkit-scrollbar {
