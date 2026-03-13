@@ -14,7 +14,9 @@
     "dependencies": {
         "@upstash/redis": "^1.36.2",
         "@vercel/analytics": "^1.6.1",
-        "@vercel/node": "^5.5.33"
+        "@vercel/node": "^5.5.33",
+        "react": "^19.2.4",
+        "react-dom": "^19.2.4"
     },
     "devDependencies": {
         "typescript": "^5.9.3"
