@@ -4,6 +4,8 @@
 **/out
 
 .vercel
+.vscode
+
 **/.env*.local
 
 *.md
