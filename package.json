@@ -8,7 +8,7 @@
     "type": "module",
     "scripts": {
         "test": "echo \"info: ready to run!\"",
-        "build": "tsc && esbuild src/widgets/*.tsx --bundle --outdir=public/out/widgets --format=esm --minify"
+        "build": "tsc"
     },
     "dependencies": {
         "@upstash/redis": "^1.36.2",
