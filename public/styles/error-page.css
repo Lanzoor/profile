@@ -26,12 +26,10 @@
 body {
     min-height: 100vh;
     margin: 0;
+    font-family: 'Geist';
+    font-weight: 300;
 
     background: radial-gradient(circle at top, #0c1f3a 0%, transparent 55%), linear-gradient(140deg, #020814, #050b1e 45%, #01040c);
-}
-
-* {
-    font-family: 'Fira Code';
 }
 
 h1,

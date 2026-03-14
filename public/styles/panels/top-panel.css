@@ -17,7 +17,7 @@ body {
     height: 150px;
     max-height: 10vh;
 
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.75);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
 
@@ -109,7 +109,7 @@ body {
     color: white;
 
     font-size: min(30px, 3vh);
-    font-family: 'Fira Code';
+    font-family: 'Space Grotesk';
 }
 
 #top-panel--navigation {
@@ -131,6 +131,7 @@ body {
         0 0 10px white,
         4px 4px 1px rgb(100, 100, 100);
 }
+
 #navigation--close p,
 #navigation--close button {
     color: white;
@@ -236,7 +237,7 @@ body {
 }
 
 #navigation-panel nav a {
-    font-family: 'Fira Code';
+    font-family: 'Space Grotesk';
     font-size: min(25px, 5vh);
 
     color: #ccc;
@@ -278,7 +279,7 @@ body {
 }
 
 #top-panel--links a {
-    font-family: 'Space Grotesk';
+    font-family: 'Geist';
     font-size: 15px;
 
     padding: 2.5px;

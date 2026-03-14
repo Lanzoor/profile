@@ -13,7 +13,8 @@
 }
 
 body {
-    font-family: 'Brass Mono';
+    font-family: 'Geist';
+    font-weight: 300;
 
     font-size: 25px;
     line-height: 1.5;
@@ -27,7 +28,7 @@ body {
 h1,
 h2,
 h3 {
-    font-family: 'JetBrains Mono';
+    font-family: 'Space Grotesk';
     font-weight: normal;
 
     margin: var(--medium-space) 0 var(--large-space) 0;
@@ -100,7 +101,6 @@ ol:hover {
 
 ul h3,
 ol h3 {
-    font-family: 'JetBrains Mono';
     font-size: 30px;
 
     margin: 0.75em 0.25em;
@@ -115,7 +115,7 @@ p hr {
 
 b,
 strong {
-    font-style: bold;
+    font-weight: 500;
 
     color: #e6e6fa;
     text-shadow: 0 0 25px currentColor;
@@ -130,9 +130,6 @@ em {
 }
 
 a {
-    font-family: 'JetBrains Mono';
-    font-size: 20px;
-
     display: inline-block;
 
     text-decoration: none;
@@ -162,7 +159,7 @@ code,
 kbd {
     font-family: 'JetBrains Mono';
 
-    padding: 0.1em 0.2em;
+    padding: 0.05em 0.2em;
     border-radius: 6px;
     white-space: nowrap;
     display: inline-block;

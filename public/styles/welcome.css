@@ -21,6 +21,8 @@ body {
 }
 
 #welcome {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     min-height: 90vh;
     padding: 5vh 0 20vh;
 }
