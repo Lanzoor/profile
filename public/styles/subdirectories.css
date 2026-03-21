@@ -134,7 +134,7 @@ a {
     -webkit-background-clip: text;
 
     transition:
-        transform 0.1s ease-out,
+        transform 0.2s ease-out,
         text-shadow 0.2s ease;
 }
 
@@ -280,7 +280,6 @@ th:hover {
 
     min-width: 100vw;
 
-    min-height: 100vh;
     max-height: none;
 
     flex: none;

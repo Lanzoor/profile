@@ -8,6 +8,10 @@ body {
     color: #e6f0ff;
 }
 
+b {
+    color: rgb(184, 213, 255);
+}
+
 h1,
 h2,
 h3 {
@@ -16,8 +20,16 @@ h3 {
 }
 
 h1 {
-    background: linear-gradient(90deg, #8fd3ff, #1159be);
-    text-shadow: 0 0 20px rgba(120, 200, 255, 0.7);
+    background: linear-gradient(120deg, #aef3ff, #2facff);
+    text-shadow: 0 2.5px 20px rgb(0, 98, 255);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+h2 {
+    background: linear-gradient(175deg, #50c9de, #0c72b6);
+    text-shadow: 0 2.5px 20px rgb(0, 98, 255);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -40,7 +52,7 @@ p {
 a {
     display: inline-block;
     background: linear-gradient(120deg, #4da6ff, #00e0ff);
-    text-shadow: 0 0 18px rgba(0, 200, 255, 0.8);
+    text-shadow: 0 6px 18px rgba(0, 200, 255, 0.8);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -49,7 +61,7 @@ a {
 
 a:hover {
     background: linear-gradient(120deg, #7bb8ff, #6affff);
-    text-shadow: 0 0 25px rgba(120, 240, 255, 1);
+    text-shadow: 0 0 18px rgba(120, 240, 255, 1);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
