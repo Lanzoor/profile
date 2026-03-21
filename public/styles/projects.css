@@ -46,27 +46,27 @@ body {
 }
 
 button.show-all {
-    background: linear-gradient(120deg, rgba(170, 0, 255, 0.25), rgba(255, 255, 255, 0.25), rgba(72, 0, 255, 0.25));
-}
-
-button.show-all:hover {
-    background: linear-gradient(120deg, rgba(170, 0, 255, 0.5), rgba(255, 255, 255, 0.25), rgba(72, 0, 255, 0.5));
-}
-
-button.show-all.selected {
     background: linear-gradient(120deg, rgba(170, 0, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(72, 0, 255, 0.75));
+    background-size: 150% 150%;
+    background-position: top left;
+
+    transition: all 0.5s ease;
+}
+button.show-all:hover {
+    background-position: bottom right;
+}
+button.show-all.selected {
+    background-position: center center;
 }
 
 .programs .projects--grid div,
 button.programs {
     background: #ff00bf25;
 }
-
 .programs .projects--grid div:hover,
 button.programs:hover {
     background: #ff00bf50;
 }
-
 button.programs.selected {
     background: #ff00bf75;
 }
@@ -75,12 +75,10 @@ button.programs.selected {
 button.videos {
     background: #6f00ff25;
 }
-
 .videos .projects--grid div:hover,
 button.videos:hover {
     background: #6f00ff50;
 }
-
 button.videos.selected {
     background: #6f00ff75;
 }
@@ -89,12 +87,10 @@ button.videos.selected {
 button.conlangs {
     background: #ffbb0025;
 }
-
 .conlangs .projects--grid div:hover,
 button.conlangs:hover {
     background: #ffbb0050;
 }
-
 button.conlangs.selected {
     background: #ffbb0075;
 }
@@ -105,6 +101,7 @@ button.conlangs.selected {
     border: 2px solid white;
     background: #22222275;
     max-width: 80vw;
+    border-radius: 30px;
 }
 
 .projects--filter-button {

@@ -38,9 +38,7 @@ body {
     opacity: 1;
     transform: translateY(0);
 
-    transition:
-        opacity 1s ease,
-        transform 1s ease;
+    transition: all 0.5s ease;
     pointer-events: all;
 }
 
@@ -62,12 +60,11 @@ body {
 
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.75));
     background-size: 150% 150%;
-    background-position: left top;
+    background-position: 0% 0%;
 
     border-radius: 30px;
     border: 3px solid rgba(255, 255, 255, 0.5);
     box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.5);
-    transition: all 0.5s ease;
 }
 
 #welcome--message #emphasized {
@@ -76,7 +73,7 @@ body {
 
 #welcome--message:hover {
     border-color: rgba(255, 255, 255, 0.75);
-    background-position: right bottom;
+    background-position: 100% 100%;
     box-shadow:
         20px 40px 20px rgba(0, 0, 0, 0.5),
         inset 0 0 20px rgba(0, 0, 0, 0.5);
@@ -96,7 +93,7 @@ body {
     user-select: none;
 }
 
-#welcome--buttons button {
+#welcome--buttons a button {
     font-family: 'Fira Code';
     font-size: 40px;
 
@@ -105,15 +102,16 @@ body {
     margin: 1em;
 
     cursor: pointer;
-
     transition: all 0.5s ease;
 }
 
-#welcome--buttons button:active {
+#welcome--buttons a button:active {
     transform: translateY(20px);
 }
 
 #welcome--profile-button {
+    all: unset;
+
     padding: min(2.5rem, 5vw) min(10rem, 5vw);
     color: white;
 
@@ -131,16 +129,22 @@ body {
 }
 
 #welcome--navigation-button {
+    all: unset;
+
     font-size: 30px;
+    font-family: 'Fira Code';
     background: none;
+    border: none;
 
     color: #ccc;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transition: all 0.5s ease;
 }
 
 #welcome--navigation-button:hover {
     color: white;
     text-shadow: 0 0 20px white;
+    cursor: pointer;
 }
 
 #welcome--down {
@@ -182,7 +186,7 @@ body {
     width: max(10vh);
     height: max(7.5vh);
 
-    transition: filter 0.2s ease;
+    transition: filter 0.5s ease;
 }
 
 #welcome--down svg:hover {
