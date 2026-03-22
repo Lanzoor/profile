@@ -1,7 +1,8 @@
 import { pingServer } from '../ping-server.js';
 
-let enableAnimation = true;
-let enableOptimization = window.matchMedia('(max-width: 768px)').matches;
+function isMobileDevice() {
+    return (navigator as any).userAgentData?.mobile || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || ('ontouchstart' in window && navigator.maxTouchPoints > 0);
+}
 
 async function sleep(timeMs: number): Promise<any> {
     return new Promise((p) => setTimeout(p, timeMs));
@@ -14,6 +15,30 @@ function pickRandom<T>(arr: T[]): T {
 function randInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+let enableAnimation = true;
+let enableOptimization = false;
+
+let starLimit = 100;
+let animationIntervalMs = 1000;
+let baseFontSizePx = 80;
+
+function updateOptimization() {
+    enableOptimization = window.matchMedia('(max-width: 1080px)').matches || isMobileDevice();
+
+    const indicator = document.querySelector('#profile--name-display #optimization-indicator')!;
+
+    starLimit = enableOptimization ? 50 : 100;
+    animationIntervalMs = enableOptimization ? 2000 : 1000;
+    baseFontSizePx = enableOptimization ? 40 : 80;
+
+    indicator.classList.toggle('active', enableOptimization);
+
+    startFontAnimation();
+}
+
+document.addEventListener('DOMContentLoaded', updateOptimization);
+window.addEventListener('resize', updateOptimization);
 
 document.addEventListener('DOMContentLoaded', async () => {
     const elements = ['#welcome--header', '#welcome--message', '#welcome--buttons', '#welcome--down'];
@@ -94,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const stars: HTMLElement[] = [];
 
-    function randomizeStar(star: HTMLElement, initial = false) {
+    function randomizeStars(star: HTMLElement, initial = false) {
         const size = Math.random() * 6;
         const opacity = randInt(3, 10) / 10;
 
@@ -107,13 +132,11 @@ document.addEventListener('DOMContentLoaded', () => {
         star.dataset.speed = String(opacity * 0.3);
     }
 
-    let starLimit = enableOptimization ? 50 : 100;
-
     for (let index = 0; index < starLimit; index++) {
         const star = document.createElement('div');
         star.classList.add('star');
 
-        randomizeStar(star, true);
+        randomizeStars(star, true);
 
         container.appendChild(star);
         stars.push(star);
@@ -129,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (top < -10) {
                     star.style.transition = 'none';
-                    randomizeStar(star);
+                    randomizeStars(star);
 
                     star.getBoundingClientRect();
 
@@ -148,29 +171,75 @@ document.addEventListener('DOMContentLoaded', () => {
     updateStars();
 });
 
+let fontAnimationId: NodeJS.Timeout | any;
+let letters: HTMLSpanElement[] = [];
+let word: HTMLElement;
+let fonts: string[] = [];
+let fontIndex = 0;
+
+function startFontAnimation() {
+    clearInterval(fontAnimationId);
+    fontAnimationId = setInterval(runFontAnimation, animationIntervalMs);
+}
+
+function runFontAnimation() {
+    if (!enableAnimation) return;
+
+    const currentFont = fonts[fontIndex];
+    const currentFontWeight = pickRandom(['100', '200', '300', '400']);
+    const currentFontStyle = pickRandom(['normal', 'italic']);
+
+    const scale = enableOptimization ? randInt(75, 100) / baseFontSizePx : randInt(100, 150) / baseFontSizePx;
+
+    for (const letter of letters) {
+        letter.style.fontFamily = currentFont;
+        letter.style.fontWeight = currentFontWeight;
+        letter.style.fontStyle = currentFontStyle;
+    }
+
+    word.style.transform = `scale(${scale})`;
+
+    fontIndex = (fontIndex + 1) % fonts.length;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    const lanzoorLetters = Array.from(document.querySelectorAll('#profile--name-display span')).map((span) => span as HTMLSpanElement);
-    const fonts = ['JetBrains Mono', 'Geist', 'Space Grotesk', 'Fira Code', 'Fairfax HD', 'Brass Mono'];
-    let fontIndex = 0;
-    let fontAnimationInterval = enableOptimization ? 1500 : 750;
+    word = document.getElementById('lanzoor-letters')!;
+    letters = Array.from(document.querySelectorAll('#lanzoor-letters span')).map((element) => element as HTMLSpanElement);
 
-    setInterval(() => {
-        if (!enableAnimation) {
-            return;
-        }
+    fonts = ['JetBrains Mono', 'Geist', 'Space Grotesk', 'Fira Code', 'Fairfax HD', 'Brass Mono'];
 
-        let currentFont = fonts[fontIndex];
-        let currentFontWeight = pickRandom(['100', '200', '300', '400']);
-        let currentFontStyle = pickRandom(['normal', 'italic']);
-        let currentFontSize = enableOptimization ? randInt(75, 100) : randInt(100, 150);
+    fontIndex = 0;
 
-        for (const letter of lanzoorLetters) {
+    for (const letter of letters) {
+        letter.style.fontSize = baseFontSizePx + 'px';
+        letter.style.display = 'inline-block';
+        letter.style.transformOrigin = 'center';
+    }
+
+    function startFontAnimation() {
+        clearInterval(fontAnimationId);
+
+        fontAnimationId = setInterval(runFontAnimation, animationIntervalMs);
+    }
+
+    function runFontAnimation() {
+        if (!enableAnimation) return;
+
+        const currentFont = fonts[fontIndex];
+        const currentFontWeight = pickRandom(['100', '200', '300', '400']);
+        const currentFontStyle = pickRandom(['normal', 'italic']);
+
+        const scale = enableOptimization ? randInt(75, 100) / baseFontSizePx : randInt(100, 150) / baseFontSizePx;
+
+        for (const letter of letters) {
             letter.style.fontFamily = currentFont;
             letter.style.fontWeight = currentFontWeight;
             letter.style.fontStyle = currentFontStyle;
-            letter.style.fontSize = String(currentFontSize) + 'px';
         }
 
+        word.style.transform = `scale(${scale})`;
+
         fontIndex = (fontIndex + 1) % fonts.length;
-    }, fontAnimationInterval);
+    }
+    startFontAnimation();
 });

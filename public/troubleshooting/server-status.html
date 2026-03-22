@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <title>Server Status | lanzoor.dev</title>
 
-    <link rel="stylesheet" href="/styles/fonts.css"/>
-    <link rel="stylesheet" href="/styles/subdirectories.css"/>
-    <link rel="stylesheet" href="/styles/error-page.css"/>
-    <link rel="stylesheet" href="/styles/panels/top-panel.css"/>
+    <link rel="stylesheet" href="/styles/fonts.css" />
+    <link rel="stylesheet" href="/styles/subdirectories.css" />
+    <link rel="stylesheet" href="/styles/error-page.css" />
+    <link rel="stylesheet" href="/styles/panels/top-panel.css" />
 </head>
+
 <body>
     <div class="error-container">
         <h1>- Server Status -</h1>
 
         <blockquote>
-            Current server status (<code>/api/status</code>): <b id="server-status">🟡 Unknown</b> | Last pinged <code id="ping-display">not pinged yet</code><br><br>
+            Current server status (<code>/api/status</code>): <b id="server-status">🟡 Unknown</b> | Last pinged <code
+                id="ping-display">not pinged yet</code><br><br>
 
-            If the online status says <b>🟡 Unknown</b> even after waiting a while, it is most likely a JavaScript link error.<br>
-            <b>Please check our <a href="/troubleshooting/javascript-error.html">JavaScript troubleshooting page</a></b>. Otherwise, please follow the steps below.
+            If the online status says <b>🟡 Unknown</b> even after waiting a while, it is most likely a JavaScript link
+            error.<br>
+            <b>Please check our <a href="/troubleshooting/javascript-error.html">JavaScript troubleshooting
+                    page</a></b>. Otherwise, please follow the steps below.
         </blockquote>
 
         <h1>- Server Error -</h1>
@@ -27,43 +32,44 @@
 
     <script src="/out/ping-server.js"></script>
     <script>
-const serverStatus = document.getElementById('server-status');
-const pingDisplay = document.getElementById('ping-display');
+        const serverStatus = document.getElementById('server-status');
+        const pingDisplay = document.getElementById('ping-display');
 
-let lastUpdated;
+        let lastUpdated;
 
-async function updateServerStatus() {
-    const fetchResult = await pingServer('https://lanzoor.dev/api/status/');
-    if (fetchResult) {
-        serverStatus.textContent = '🟢 Online';
-    } else {
-        serverStatus.textContent = '🔴 Troublesome';
-    }
+        async function updateServerStatus() {
+            const fetchResult = await pingServer('https://lanzoor.dev/api/status/');
+            if (fetchResult) {
+                serverStatus.textContent = '🟢 Online';
+            } else {
+                serverStatus.textContent = '🔴 Troublesome';
+            }
 
-    lastUpdated = Date.now();
-}
+            lastUpdated = Date.now();
+        }
 
-document.addEventListener('DOMContentLoaded', () => {
-    updateServerStatus();
-    setInterval(updateServerStatus, 30000);
-});
+        document.addEventListener('DOMContentLoaded', () => {
+            updateServerStatus();
+            setInterval(updateServerStatus, 30000);
+        });
 
-function updateLastUpdatedDisplay() {
-    if (lastUpdated) {
-        const currentTime = Date.now();
-        const differenceMs = currentTime - lastUpdated;
-        const differenceSec = Math.floor(differenceMs / 1000);
+        function updateLastUpdatedDisplay() {
+            if (lastUpdated) {
+                const currentTime = Date.now();
+                const differenceMs = currentTime - lastUpdated;
+                const differenceSec = Math.floor(differenceMs / 1000);
 
-        pingDisplay.textContent = `${differenceSec} seconds ago`;
-    } else {
-        pingDisplay.textContent = 'not pinged yet';
-    }
+                pingDisplay.textContent = `${differenceSec} seconds ago`;
+            } else {
+                pingDisplay.textContent = 'not pinged yet';
+            }
 
-    requestAnimationFrame(updateLastUpdatedDisplay);
-}
+            requestAnimationFrame(updateLastUpdatedDisplay);
+        }
 
-updateLastUpdatedDisplay();
+        updateLastUpdatedDisplay();
     </script>
     <script src="/out/top-panel.js"></script>
 </body>
+
 </html>

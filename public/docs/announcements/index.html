@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <title>Announcements | lanzoor.dev</title>
 
-    <link rel="stylesheet" href="/styles/fonts.css"/>
+    <link rel="stylesheet" href="/styles/fonts.css" />
     <link rel="stylesheet" href="/styles/documents.css">
-    <link rel="stylesheet" href="/styles/panels/top-panel.css"/>
+    <link rel="stylesheet" href="/styles/panels/top-panel.css" />
 
     <style>
         th:nth-child(2),
@@ -19,24 +20,28 @@
         }
     </style>
 </head>
+
 <body>
     <a href="/docs/" id="portal">../ Go back to my documents page</a>
 
     <h1>Announcement Portal</h1>
 
     <p>
-        Hello there! This is a page where you can find all of my announcements.<br/>
+        Hello there! This is a page where you can find all of my announcements.<br />
         <i>Click one of the links below to warp into that page.</i><br><br>
 
         <b>- Searching Tools -</b><br><br>
-        <button id="sort-button">Sort: Descending</button> <input type="text" id="announcements-search" placeholder="Search by title..." />
+        <button id="sort-button">Sort: Descending</button> <input type="text" id="announcements-search"
+            placeholder="Search by title..." />
     </p>
 
     <table id="announcements-table">
-        <td>Fetching announcements... (if this persists, visit the <a href="/troubleshooting/javascript-error.html">troubleshooting page</a>.)</td>
+        <td>Fetching announcements... (if this persists, visit the <a
+                href="/troubleshooting/javascript-error.html">troubleshooting page</a>.)</td>
     </table>
 
     <script src="/out/top-panel.js"></script>
     <script src="/out/etc/announcements.js"></script>
 </body>
+
 </html>

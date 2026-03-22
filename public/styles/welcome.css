@@ -217,17 +217,34 @@ body {
     overflow: hidden;
 }
 
-#profile--name-display span {
+#lanzoor-letters span {
     font-family: 'Geist';
     font-style: italic;
     font-weight: 200;
+    font-size: 100px;
 
     text-shadow: 0 0 25px rgb(121, 168, 255);
-    font-size: 80px;
+
+    line-height: 1;
+    white-space: nowrap;
 }
 
 #profile--name-display:hover {
     box-shadow: inset 0 0 50px white;
+}
+
+#profile--name-display #optimization-indicator {
+    position: absolute;
+
+    left: 30px;
+    bottom: 30px;
+    opacity: 0;
+
+    transition: opacity 0.5s ease;
+}
+
+#profile--name-display #optimization-indicator.active {
+    opacity: 0.6;
 }
 
 #profile--name-display button {
@@ -239,6 +256,7 @@ body {
     right: 30px;
     bottom: 30px;
 
+    font-family: 'JetBrains Mono';
     font-size: 20px;
 
     color: white;
@@ -505,5 +523,11 @@ footer {
     .social-icon {
         width: 40px;
         height: 40px;
+    }
+}
+
+@media (max-width: 1080px) {
+    #profile--name-display {
+        height: 500px;
     }
 }
